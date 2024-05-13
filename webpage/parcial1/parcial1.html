@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="hexagon.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nav {
+        margin-top: 0px; /* Adjust as needed */
+        margin-bottom: 0px;
+        position: absolute;
+    }
+
+    h1{
+        margin-top: -160px;
+    }
+
+
+    .boton {
+        width: 140px; /* Ancho inicial */
+        height: 40px;
+        transition: all .8s;
+        border: 5px solid;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(255, 255, 255); 
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: auto;
+        overflow: hidden; /* Para ocultar el contenido fuera del área del botón */
+        justify-content: center;
+}
+
+    .boton:hover {
+        width: 145px; /* Ancho al hacer hover */
+        height: 45px;
+        padding-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        border: 10px solid;
+        animation: rgb 1s linear forwards; /* La animación ocurre solo una vez y se queda en su estado final */
+    }
+
+    .boton a {
+        width: 140px; /* Ancho al hacer hover */
+        height: 40px;
+        display: block;
+        margin-top: 12px;
+        text-decoration: none;
+        margin-left: 0px;
+        text-align: center; 
+    }
+
+    .boton:hover a {
+        margin: auto;
+        width: 140px; /* Ancho al hacer hover */
+        height: 40px;
+        animation: rgb2 1s linear forwards;
+    }
+
+    div{
+        position: absolute;
+        margin-top: 30px;
+        font-weight: bold;
+        width: 140px; /* Ancho al hacer hover */
+        height: 40px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    @keyframes rgb {
+        100% {background-color:rgb(0, 0, 0); border-color: rgb(255, 255, 255); color: rgb(255, 255, 255);}
+    }
+
+    @keyframes rgb2 {
+        100% {color: rgb(255, 255, 255);}
+    }
+</style>
+<body>
+    <div class="boton">
+        <a href="index.html">Volver</a>
+    </div>
+    <article class="wrapper">
+        <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+    <label for="menu-icon"></label>
+    <nav class="nav"> 		
+        <ul class="pt-1">
+            <li><a style="color: rgb(255, 0, 0);" target="iframe_a" href="https://sites.google.com/view/avicii-true-stories--odhs/p%C3%A1gina-principal">Google Sites</a></li>
+            <li><a style="color: rgb(255, 81, 0);" target="iframe_a" href="https://avicii-true-stories.my.canva.site/website">Canva</a></li>
+            <li><a style="color: rgb(255, 166, 0);" target="iframe_a" href="Práctica I.html">Práctica 1</a></li>
+            <li><a style="color: rgb(251, 255, 0);" target="iframe_a" href="Práctica II.html">Práctica 2</a></li>
+            <li><a style="color: rgb(208, 255, 0);" target="iframe_a" href="Práctica III.html">Práctica 3</a></li>
+            <li><a style="color: rgb(102, 255, 0);" target="iframe_a" href="Práctica IV.html">Práctica 4</a></li>
+            <li><a style="color: rgb(0, 255, 98);" target="iframe_a" href="Práctica V.html">Práctica 5</a></li>
+            <li><a style="color: rgb(0, 255, 170);" target="iframe_a" href="Práctica VI.html">Práctica 6</a></li>
+            <li><a style="color: rgb(0, 204, 255);" target="iframe_a" href="Práctica VII.html">Práctica 7</a></li>
+            <li><a style="color: rgb(0, 38, 255);" target="iframe_a" href="Reto1.html">Reto 1</a></li>
+            <li><a style="color: rgb(76, 0, 255);" target="iframe_a" href="https://mispracticasupslp.000webhostapp.com/sistemasolar/sistemasolar.html">Sistema Solar</a></li>
+            <li><a style="color: rgb(183, 0, 255);" target="iframe_a" href="reproductor.html">Reproductor</a></li>
+            <li><a style="color: rgb(255, 0, 191);" target="iframe_a" href="formulario.html">Formulario</a></li>
+            <li><a style="color: rgb(255, 0, 191);" target="iframe_a" href="razas.html">Examen Parcial 1</a></li>
+        </ul>
+    </nav>
+
+    <div class="section-center">
+        <h1 class="mb-0">Parcial 1</h1>
+        <iframe style="background-color: rgb(48, 48, 48);" name="iframe_a" height="300px" width="80%" title="contenido"></iframe>
+    </div>
+    </article>
+</body>
+</html>
