@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transición de imagen con CSS</title>
+    <style>
+        /* Estilos básicos para la imagen */
+        .boton{
+            width: 150px; /* Ancho inicial */
+            height: 50px;
+            transition: width 0.5s; /* Transición suave */
+            border: 5px solid;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: blue; 
+            color: rgb(255, 255, 255);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-decoration: none;
+        }
+
+        a{
+            text-decoration: none;
+            animation-name: rgb2;
+            animation-duration: 20s;
+            font-weight: bold;
+        }
+
+        /* Cambio de tamaño al hacer hover */
+        .boton:hover {
+            width: 300px; /* Ancho al hacer hover */
+            height: 100px;
+            transition: width 0.5s; 
+            font-size: 20px;
+            font-weight: bold;
+            border: 10px solid;
+            animation-name: rgb;
+            animation-duration: 20s;
+        }
+
+        
+        @keyframes rgb{
+            0%   {background-color:rgb(255, 0, 0); border-color: rgb(255, 0, 34); color: rgb(255, 0, 34);}
+            10%  {background-color: rgb(255, 136, 0); border-color: rgb(255, 0, 119); color: rgb(255, 0, 119);}
+            15%  {background-color:rgb(255, 230, 0); border-color: rgb(255, 0, 221); color: rgb(255, 0, 221);;}
+            20% {background-color:rgb(238, 255, 0); border-color: rgb(174, 0, 255); color: rgb(174, 0, 255);}
+            25%  {background-color:rgb(200, 255, 0); border-color: rgb(140, 0, 255); color: rgb(140, 0, 255);}
+            30% {background-color:rgb(166, 255, 0); border-color: rgb(98, 0, 255); color: rgb(98, 0, 255);}
+            35% {background-color:rgb(0, 255, 136); border-color: rgb(0, 17, 255); color: rgb(0, 17, 255);}
+            40% {background-color:rgb(0, 255, 221); border-color: rgb(0, 140, 255); color: rgb(0, 140, 255);}
+            45% {background-color:rgb(0, 195, 255); border-color: rgb(0, 195, 255); color: rgb(0, 195, 255);}
+            50% {background-color:rgb(0, 140, 255); border-color: rgb(0, 255, 221); color: rgb(0, 255, 221);}
+            55% {background-color:rgb(0, 17, 255); border-color: rgb(0, 255, 136); color: rgb(0, 255, 136);}
+            60% {background-color:rgb(98, 0, 255); border-color: rgb(166, 255, 0); color: rgb(166, 255, 0);}
+            65% {background-color:rgb(140, 0, 255); border-color: rgb(200, 255, 0); color: rgb(200, 255, 0);}
+            70% {background-color:rgb(174, 0, 255); border-color: rgb(238, 255, 0); color: rgb(238, 255, 0);}
+            75% {background-color:rgb(255, 0, 221); border-color: rgb(255, 230, 0); color: rgb(255, 230, 0);}
+            80% {background-color:rgb(255, 0, 119); border-color: rgb(255, 136, 0); color: rgb(255, 136, 0);}
+            85% {background-color:rgb(255, 0, 34); border-color: rgb(255, 0, 0); color: rgb(255, 0, 0);}
+        }
+
+        @keyframes rgb2{
+            0%   {color: rgb(255, 0, 34);}
+            10%  {color: rgb(255, 0, 119);}
+            15%  {color: rgb(255, 0, 221);;}
+            20% {color: rgb(174, 0, 255);}
+            25%  {color: rgb(140, 0, 255);}
+            30% {color: rgb(98, 0, 255);}
+            35% {color: rgb(0, 17, 255);}
+            40% {color: rgb(0, 140, 255);}
+            45% {color: rgb(0, 195, 255);}
+            50% {color: rgb(0, 255, 221);}
+            55% {color: rgb(0, 255, 136);}
+            60% {color: rgb(166, 255, 0);}
+            65% {color: rgb(200, 255, 0);}
+            70% {color: rgb(238, 255, 0);}
+            75% {color: rgb(255, 230, 0);}
+            80% {color: rgb(255, 136, 0);}
+            85% {color: rgb(255, 0, 0);}
+        }
+
+    </style>
+</head>
+<body>
+<div style="position: relative; display: inline;" >
+    <h1>Transición de imagen con CSS</h1>
+    <div class="boton"><a href="https://www.upslp.edu.mx/upslp/?page_id=271">Nosotros</a></div>
+    <div class="boton"><a href="https://www.upslp.edu.mx/upslp/?page_id=244">Aspirantes</a></div>
+    <div class="boton"><a href="https://www.upslp.edu.mx/upslp/?page_id=209">Estudiantes</a></div>
+    <div class="boton"><a href="https://www.upslp.edu.mx/upslp/?page_id=231">Docentes</a></div>
+    <div class="boton"><a href="https://www.upslp.edu.mx/upslp/?page_id=241">Egresados</a></div>
+    <div class="boton"><a href="https://www.upslp.edu.mx/upslp/?page_id=10971">Contacto</a></div>
+</div>
+
+</body>
+</html>

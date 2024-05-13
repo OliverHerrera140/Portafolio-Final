@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<style> 
+.mapa{
+    background-image: url(mapa.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 750px;
+}
+    
+
+div.carro{
+    width: 100px;
+    height: 100px;;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 200;
+    animation-direction: normal;  
+}
+
+div.pelota{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: example2;
+    animation-duration: 4s;
+    animation-iteration-count: 200;
+    animation-direction: normal;  
+    transform-origin: center;
+}
+
+@keyframes example {
+    0%   {right:-100px; top:90px;}
+    100% {right:-780px; top:90px;}
+}
+
+@keyframes example2 {
+    0%   {right: -500px; top:-110px;}
+    25%  {right:-505px; top:-30px;}
+    50%  {right:-805px; top:-50px; }
+    75%  {right:-1005px; top:-70px; transform: rotateY(90deg);}
+    100% {right:-1205px; top:-90px; }
+}
+
+@keyframes spin{
+    0%   {transform: rotateY(0deg);}
+    100%  {transform: rotateY(360deg);}
+}
+
+
+@keyframes example3 {
+    100%
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<p>The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles. The following example uses the value "alternate-reverse" to make the animation run backwards first, then forwards:</p>
+<div class="mapa">
+    <div class="carro"><img src="Octane.png" width="150px" height="150px" style="padding-top: 150px;"></div>
+    <div class="pelota"><img src="Ball.png" width="150px" height="150px" style="padding-top: 150px;"></div>
+</div>
+
+</body>
+</html>
+

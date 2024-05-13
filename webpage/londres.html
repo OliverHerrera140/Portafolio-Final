@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Oliver Denilson Herrera Saucedo</title>
+</head>
+<style>
+  body{
+    background-color: rgb(33, 184, 164);
+  }
+  h1{
+    color: rgb(33, 85, 85);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h2{
+    font-weight: bold
+  }
+  a{
+    color: orangered;
+    text-decoration: underline;
+  }
+
+  .contenedor {
+    display: flex;
+    border: 15px orangered solid;
+    padding: 25px;
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 80px;
+    margin-bottom: 35px;
+  }
+
+  .contenedor2 {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 15px orange solid;
+    padding: 25px;
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 80px;
+    margin-bottom: 35px;
+  }
+
+  .orange {
+    border: 15px orange solid;
+    height: auto;
+    width: fit-content;
+  }
+
+  .orangered{
+    border: 15px orangered solid;
+    height: auto;
+    width: fit-content;
+  }
+
+  .contenido {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
+  .contenido2 {
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+    margin-top: -20px;
+    font-size: 15px;
+    margin-right: 15px;
+  }
+
+  img{
+    height: 150px;
+    width: 180px;
+  }
+
+  h2 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  p{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 15px;
+    margin: 15px;
+  }
+  p.centro{
+    text-align: center;
+  }
+  p.contenedor1{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 14px;
+    margin: 0px;
+  }
+</style>
+<body>
+  <h1>Cuatro museos de Londres</h1>
+
+  <p>Una de las grandes atracciones de Londres son sus innumerables museos. Los más importante museos fueron creados para la educación y el entretenimiento del pueblo y por ese motivo siguen siendo gratuitos.</p>
+
+  <p class="centro"><a href="#The-British-Museum">The British Museum</a> - <a href="#Tate-Britain">Tate Britain</a> - <a href="#The-National-Gallery">The National Gallery</a> - <a href="#Natural-History-Museum">Natural History Museum</a></p>
+  <br>
+
+  <div class="contenedor">
+    <div class="orangered" style="margin-right: 15px;">
+      <div class="orange">
+        <img src="british-museum.jpg">
+      </div>
+    </div>
+    <div class="contenido">
+      <h2 id="The-British-Museum">The British Museum</h2>
+      <p class="contenedor1">El Museo Británico se fundó en 1735 y alberga antigüedades procedentes de Egipto, Roma, Grecia, Oriente Próximo y Asia. El edificio se empezó a construir en 1824, fue diseñado por Robert Smirke y hasta 1997 también era la sede de la Biblioteca Británica. Seguramente sólo haya dos museos en el mundo comparables en la variedad y riqueza de sus colecciones: el Louvre de París y el Metropolitan de Nueva York.</p>
+    </div>
+  </div>
+  
+  <div class="contenedor2">
+    <div class="orange">
+      <div class="orangered">
+        <img src="tate-britain.jpg">
+      </div>
+    </div>
+    <div class="contenido2">
+      <h2 id="Tate-Britain">Tate Britain</h2>
+      <p class="contenedor1">En 1897 se abrió al público, al sur de Westminster, la Galería Nacional de Arte Británico, gracias al dinero aportado por Henry Tate, magnate del azúcar y coleccionista. En 1932 el museo pasó a llamarse Tate Gallery. En 2000 el museo inaguró la Tate Modern, una nueva sede situada frente a la Catedral de San Pablo. La Tate Gallery pasó a llamarse Tate Britain y alberga importantes colecciones como las dedicadas a William Turner o a Henry Moore.</p>
+    </div>
+  </div>
+  
+  <div class="contenedor">
+    <div class="orangered" style="margin-right: 15px;">
+      <div class="orange">
+        <img src="trafalgar-square.jpg">
+      </div>
+    </div>
+    <div class="contenido">
+      <h2 id="The-National-Gallery">The National Gallery</h2>
+      <p class="contenedor1">La National Gallery alberga la más importante colección inglesa de pintura de los siglos XV al XIX. Fue creada en 1824 a partir de donaciones y compras a coleccionistas particulares y desde 1838 tiene su sede en Trafalgar Square. Esta plaza está dedicada a una de las victorias más importantes de la Armada inglesa, la batalla de Trafalgar de 1805, frente a las flotas francesa y española. En el centro de la plaza se encuentra la columna de Nelson, que dirigió la flota inglesa en esa batalla y falleció en ella.</p>
+    </div>
+  </div>
+  
+  <div class="contenedor2">
+    <div class="orange">
+      <div class="orangered">
+        <img src="natural-history.jpg">
+      </div>
+    </div>
+    <div class="contenido2">
+      <h2 id="Natural-History-Museum">Natural History Museum</h2>
+      <p class="contenedor1">En el siglo XVII el Museo Británico albergaba colecciones de animales y plantas, pero en desastrosas condiciones. Para resolver la situación, en 1881 se abrió la sede actual del Museo de Historia Natural, un magnífico edificio de ladrillo de terracota, característico de la época victoriana. En sus inmediaciones se encuentran también el museo de la Ciencia, el museo de Arte y Diseño, varias reales academias de arte y ciencia y la famosa sala de conciertos Royal Albert Hall.</p>
+    </div>
+  </div>
+</body>
+</html>
