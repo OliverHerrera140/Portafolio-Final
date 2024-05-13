@@ -1,0 +1,58 @@
+<html>
+
+<head>
+
+<title>Bienvenida del usuario</title>
+
+<style>
+    body {
+        background-color: aquamarine;
+    }
+
+    p{
+        color: rgb(0, 26, 255);
+    }
+
+    table, td, th{
+        border: 5px solid black ;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    
+</style>
+
+<script type="text/javascript">
+
+function validar() {
+    var name1 = document.forms[0].name.value;
+    var pass1 = document.forms[0].pass.value;
+
+    if (name1 == pass1) {
+        location.replace("https://mispracticasupslp.000webhostapp.com/index.html");
+        alert("Redireccionando...");
+        return true;
+    } else {
+        
+        document.getElementById("mensaje-error").innerText = "Contraseña o usuario incorrecto. Ingresa de nuevo.";
+        return false; 
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return validar();">
+
+<p>Usuario <input id="name" name="name" type="text" /></p>
+<p>Contraseña <input id="pass" name="pass" type="password" /></p>
+
+<p><input type="submit" /></p>
+
+<p id="mensaje-error"></p>
+
+</form>
+</body>
+</html>

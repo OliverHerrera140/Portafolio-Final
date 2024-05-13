@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+<title>Bienvenida del usuario</title>
+
+<style>
+    body {
+        background-color: aquamarine;
+    }
+
+    p{
+        color: rgb(0, 26, 255);
+    }
+
+    table, td, th{
+        border: 5px solid black ;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    
+</style>
+
+<script type = "text/javascript">
+
+function alertName() {
+
+var fil1= parseInt(document.forms[0].rows.value);
+
+
+document.write("<table>");
+
+for(i=1;i<=fil1;i++){
+
+    document.write("<p>hola</p>");
+
+}
+
+
+return true;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return alertName();">
+
+<p>Filas <input id="rows" name="rows" type="number" /></p>
+
+<p><input type="submit" /></p>
+
+</form>
+
+</body>
+
+</html>

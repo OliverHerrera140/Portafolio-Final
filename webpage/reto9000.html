@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+
+    <script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+
+    <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+</head>
+<body>
+    <form id="myform" onsubmit="return piramide();">
+        <p>Caracter: </p><input type="text" id="caracter" placeholder="Ingrese el caracter" required><br><br>
+        <p>Altura: </p><input type="number" id="altura" placeholder="Ingrese la altura" required><br><br>
+        <input type="submit" class="btn btn-primary" style="margin-left: 500px;"></p>
+    </form>
+    <br><br><br><br><br>       
+    <iframe frameborder="0" width="500" height="400"></iframe>
+<script>
+function piramide() {
+    var Char = document.getElementById('caracter').value;
+    var Altura = parseInt(document.getElementById('altura').value);
+
+    var doc = new jsPDF();
+    doc.setFontSize(22);
+    doc.text(20, 20, 'Pirámide');
+    doc.setFontSize(16);
+    doc.text(20, 30, 'El caracter ' + Char + ' se repite ' + Altura + ' veces');
+
+    for (var i = 1; i <= Altura; i++) {
+        var line = '';
+        for (var j = 1; j <= i; j++) {
+            line += Char + ' ';
+        }
+        doc.text(20, 60 + (i - 1) * 10, line);
+    }
+
+    var string = doc.output('datauristring');
+    $('iframe').attr('src', string);
+    return false; // Evitar envío de formulario
+}
+</script>
+</body>
+</html>

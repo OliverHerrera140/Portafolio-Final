@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+<title>Bienvenida del usuario</title>
+
+<style>
+    body {
+        background-color: aquamarine;
+    }
+
+    p{
+        color: rgb(0, 26, 255);
+    }
+
+    table, td, th{
+        border: 5px solid black ;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    
+</style>
+
+<script type="text/javascript">
+
+function Convert() {
+
+    var Grados1 = parseInt(document.forms[0].data.value);
+    var Grados2 = document.getElementById("grados");
+
+
+    if (Grados2.options[Grados2.selectedIndex].value == 'Farenheit') {
+        Grados1 = (Grados1 * 1.8) + 32;
+        document.getElementById("respuesta").innerText = Grados1;
+            return false;
+    } 
+    if (Grados2.options[Grados2.selectedIndex].value == 'Kelvin'){
+        Grados1 = Grados1 + 273.15;
+        document.getElementById("respuesta").innerText = Grados1;
+            return false;
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return Convert();">
+
+<p>Grados Centigrados <input id="data" name="data" type="number" /></p>
+<p>Convertir a 
+    <select name="grados" id="grados"> 
+        <option value=""></option>
+        <option value="Farenheit">Farenheit</option>
+        <option value="Kelvin">Kelvin</option>
+    </select>
+</p>
+<p><input type="submit" /></p>
+
+<p id="respuesta"></p>
+
+</form>
+</body>
+</html>

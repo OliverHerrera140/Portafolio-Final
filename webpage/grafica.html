@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300vh;
+            margin: 0;
+        }
+s
+        #chartContainer {
+            max-width: 600px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="chartContainer">
+        <div id="myPlot" style="width:100%;max-width:700px"></div>
+        <div id="myPlot2" style="width:100%;max-width:700px"></div>
+        <div id="myPlot3" style="width:100%;max-width:700px"></div>
+    </div>
+
+
+    <script>
+
+        const xArray = ["Fisica", "Matematicas", "Programacion I", "CNG II", "Programacion Web I", "Ingles FCE"];
+        const yArray = [8.0, 7.0, 9.5, 10.0, 10.0, 9.5];
+        const yArray2 = [7.5, 7.5, 9.0, 10.0, 10.0, 0];
+        const yArray3 = [];
+
+        for (let i = 0; i < 6; i++) {
+            yArray3[i] = Math.floor(Math.random() * 10);
+        }
+        const data = [{
+
+            x:xArray,
+
+            y:yArray,
+
+            type:"bar",
+
+            orientation:"v",
+
+            marker: {color:"rgba(255,0,0,0.6)"}
+
+        }];
+
+        const layout = {title:"Calificaciones Parcial 1"};
+        const layout2 = {title:"Calificaciones Parcial 2"};
+        const layout3 = {title:"Calificaciones Parcial 3"};
+
+        const data2 = [{
+
+            x:xArray,
+
+            y:yArray2,
+
+            type:"bar",
+
+            orientation:"v",
+
+            marker: {color:"rgba(255,255,0,0.6)"}
+
+        }];
+
+        const data3 = [{
+
+            x:xArray,
+
+            y:yArray3,
+
+            type:"bar",
+
+            orientation:"v",
+
+            marker: {color:"rgba(255,128,0,0.6)"}
+
+        }];
+
+        Plotly.newPlot("myPlot", data, layout);
+        Plotly.newPlot("myPlot2", data2, layout2);
+        Plotly.newPlot("myPlot3", data3, layout3);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #chartContainer {
+            max-width: 600px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <div id="chartContainer">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+<script>
+
+    const xValues = ["Matemáticas", "Física 1", "Programacion Web", "Programacion 1", "Nucleo 2", " Inglés VI "];
+
+    const yValues = [Math.floor(Math.random()*10)+1, Math.floor(Math.random()*10)+1, Math.floor(Math.random()*10)+1, Math.floor(Math.random()*10)+1, Math.floor(Math.random()*10)+1, Math.floor(Math.random()*10)+1,0];
+
+    const barColors = ["blue", "purple","green","orange","brown","red"];
+
+
+
+    new Chart("myChart", {
+
+        type: "bar",
+
+        data: {
+
+        labels: xValues,
+
+        datasets: [{
+
+        backgroundColor: barColors,
+
+        data: yValues
+
+        }]
+
+    },
+
+        options: {
+
+        legend: {display: false},
+
+        title: {
+
+        display: true,
+
+        text: "World Wine Production 2018"
+
+        }
+
+        }
+
+        });
+
+</script>
+
+
+
+</body>
+
+</html>

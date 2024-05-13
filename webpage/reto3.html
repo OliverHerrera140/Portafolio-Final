@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #myPlot{
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        div {
+            padding: 10px;
+            justify-content: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            justify-items: center;
+            justify-content: center;
+            border: 0;
+        }
+
+        .palabra {
+            color: #FF6700;
+            font-size:35px;
+            text-decoration: none;
+        }
+
+        .palabra2 {
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        .palabra3 {
+            color: #508AA8;
+            font-size: 35px;
+            text-decoration: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+        }
+
+        .fondo {
+            text-align: center;
+            color: #3D2C2E;
+            background-color: #D9C5B2;
+        }
+
+        .fondo2 {
+            text-align: center;
+            color: black;
+            background-color: #7E7F83;
+            font-size: 20px;
+        }
+
+        input {
+            background-color: #465362;
+            color: #D9C5B2;
+            height: 30px;
+            width: 100px;
+            font-size: 12px;
+        }
+
+        input:hover {
+            background-color: #34312D;
+            color: #F9DC5C;
+            font-weight: bold;
+            height: 30px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div style="align-items: center; justify-items: center; justify-content: center;">
+        <div class="fondo">
+            <h1>Portafolio</h1>
+            <h2 style="color: #886F68">Parcial 3</h2>
+        </div>
+
+        <div class="fondo2">
+            <p id="message">Elige la funcion trigonometrica</p>
+        </div>
+
+        <form id="myform" onsubmit="return generarGrafico();">
+            <p>Tipo de expresion 
+                <select name="tipo" id="tipo"> 
+                    <option value=""></option>
+                    <option value="Seno">Seno</option>
+                    <option value="Coseno">Coseno</option>
+                    <option value="Tangente">Tangente</option>
+                    <option value="Cotangente">Cotangente</option>
+                    <option value="Exponencial">Exponencial</option>
+                </select>
+            </p>
+            <p>Inicio <input id="inicio" name="inicio" type="number" /></p>
+            <p>Final <input id="fin" name="fin" type="number" /></p>
+            
+            <p><input type="submit" /></p>
+        </form>
+
+        <div id="myPlot" style="width:100%;max-width:700px"></div>
+    </div>
+
+    <script>
+        function generarGrafico() {
+        var Tipo = document.getElementById("tipo").value;
+        var Inicio = parseInt(document.forms["myform"]["inicio"].value);
+        var Fin = parseInt(document.forms["myform"]["fin"].value);
+
+        const xValues = [];
+        const yValues = [];
+        
+    if(Inicio !== Fin && Fin > Inicio){
+        if (Tipo === 'Seno') {
+            for (let x = Inicio; x <= Fin; x += 0.1) {
+                xValues.push(x);
+                yValues.push(Math.sin(x));
+            }
+        } else if (Tipo === 'Coseno') {
+            for (let x = Inicio; x <= Fin; x += 0.1) {
+                xValues.push(x);
+                yValues.push(Math.cos(x));
+            }
+        } else if (Tipo === 'Tangente') {
+            for (let x = Inicio; x <= Fin; x += 0.1) {
+                xValues.push(x);
+                yValues.push(Math.tan(x));
+            }
+        } else if (Tipo === 'Cotangente') {
+            for (let x = Inicio; x <= Fin; x += 0.1) {
+                xValues.push(x);
+                yValues.push(1 / Math.tan(x)); // cotangent is 1/tan(x)
+            }
+        } else if (Tipo === 'Exponencial') {
+            for (let x = Inicio; x <= Fin; x += 0.1) {
+                xValues.push(x);
+                yValues.push(Math.exp(x));
+            }
+        }
+    }
+        
+
+        var layout = {title: "Gráfico"};
+
+        var data = [{x: xValues, y: yValues, mode: "lines"}];
+
+        Plotly.react("myPlot", data, layout); 
+
+        return false;
+    }
+    </script>
+</body>
+</html>

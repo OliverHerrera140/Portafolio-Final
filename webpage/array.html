@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+    body{
+        background-color: black;
+    }
+
+    div{
+        padding: 10px;
+    }
+
+    p{
+        text-align: center;
+    }
+
+    .container {
+        text-align: center;
+        justify-items: center;
+        justify-content: center;
+        border: 0;
+    }
+
+    .palabra{
+        color: white;
+    }
+
+    .fondo{
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: #2F4550
+    }
+
+    .fondo2{
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: #586F7C;
+        font-size: 20px;
+    }
+
+    button{
+        background-color: #586F7C;
+        color:#B8DBD9;
+        height: 85px;
+        width: 120px;
+    }
+
+    button:hover{
+        background-color: #2F4550;
+        color:#BBC2E2;
+        height: 105px;
+        width: 140px;
+    }
+
+</style>
+
+<body>
+    <div>
+        <div class="fondo">
+            <h1>Arreglos</h1>
+            <h2 style="color: #B8DBD9;">Ordenación</h2>
+        </div>
+
+        <div class="fondo2">
+            <p id="message">Haz click en la opción que gustes</p>
+        </div>
+
+        <div class="container">
+            <button onclick="myFunction1()">Generar</button>
+            <button onclick="myFunction2()">Imprimir</button>
+            <button onclick="ordenaarreglo()">Ordenar</button>
+            <button onclick="alreves()">Al reves</button>
+            <button onclick="Tabla()">Arreglo en tabla</button>
+            <button onclick="Agrega()">Agregar</button>
+            <button onclick="Elimina()">Eliminar</button>
+        </div>
+        
+        <p class="palabra" id="demo"></p>
+        <p class="palabra" id="demo2"></p>
+        <p class="palabra" id="tabla"></p> 
+
+    </div>
+
+    <script>
+        var arreglo = [0, 0, 0, 0, 0, 0];
+
+        function myFunction1() {
+            document.getElementById("demo").innerHTML = "Datos Generados";
+            document.getElementById("demo2").innerHTML = "...";
+            for (var i = 0; i < 6; i++){
+                arreglo[i] =  Math.floor(Math.random() * 100) + 1;
+            }
+            document.getElementById("tabla").innerHTML = "";
+            document.getElementById("message").innerHTML = "Datos Generados";
+        }
+
+        function myFunction2() {
+            document.getElementById("demo").innerHTML = "Datos Encontrados";
+            document.getElementById("demo2").innerHTML = "Arreglo resultante: " + arreglo;
+            document.getElementById("tabla").innerHTML = "";
+            document.getElementById("message").innerHTML = "Datos Encontrados";
+        }
+
+        function ordenaarreglo() {
+            arreglo = arreglo.sort(function(a,b) { return a - b});
+            document.getElementById("demo").innerHTML = "Datos escritos en orden";
+            document.getElementById("demo2").innerHTML = "Arreglo resultante: " + arreglo;
+            document.getElementById("tabla").innerHTML = "";
+            document.getElementById("message").innerHTML = "Datos escritos en orden";
+        }
+
+        function alreves() {
+            arreglo = arreglo.reverse();
+            document.getElementById("demo").innerHTML = "Datos escrito al revés y en orden";
+            document.getElementById("demo2").innerHTML = "Arreglo resultante: " + arreglo;
+            document.getElementById("tabla").innerHTML = "";
+            document.getElementById("message").innerHTML = "Datos escrito al revés y en orden";
+        }
+
+        function Tabla() {
+            document.getElementById("demo").innerHTML = "Tabla";
+            document.getElementById("demo2").innerHTML = "";
+        
+            var texto = "";
+            texto = texto + "<table border = 1 height = 20px><tr>";
+        
+            for (var i = 0; i < 6; i++){
+                texto = texto + "<td>" + arreglo[i] + "</td>";
+            }
+            texto = texto + "</td>";
+            document.getElementById("tabla").innerHTML = texto;
+            document.getElementById("message").innerHTML = "Tabla generada";
+        }
+
+        function Agrega() {
+            document.getElementById("message").innerHTML = "Elemento agregado";
+        }
+
+        function Elimina() {
+            document.getElementById("message").innerHTML = "Elemento eliminado";
+        }
+    </script>
+
+</body>
+
+</html>

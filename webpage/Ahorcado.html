@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ahorcado</h1>
+    <p><button onclick="dibujar2()">Dibujar</button></p>
+    <p><button onclick="borrar()">Borrar</button></p>
+    <canvas id="myCanvas" width="400" height="400" style="border: 5px solid black;"></canvas>
+    <form onsubmit="return adivinar()">
+        <p>Palabra <input id="answer" name="answer" type="text" /></p>
+        <p id="exito"></p>
+        <p id="Pista"></p>
+        <p><input type="submit"/></p>
+    </form>
+
+    <script>
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        var aum = 0;
+        var pista = ['_', '_', '_', '_'];
+
+        function adivinar() {
+            var respuesta = document.forms[0].answer.value;
+            if (respuesta !== 'Rata') {
+                if (respuesta.includes("R")) {
+                    pista[0] = 'R';
+                }
+                if (respuesta.includes("a")) {
+                    pista[1] = 'a';
+                    pista[3] = 'a';
+                }
+                if (respuesta.includes("t")) {
+                    pista[2] = 't';
+                }
+                document.getElementById("Pista").innerHTML = pista.join(' ');
+                aum++;
+                dibujarBase();
+                dibujarPalo();
+                dibujarPalo2();
+                dibujarPalo3();
+                dibujar(aum);
+                if (aum >= 6) {
+                    document.getElementById("exito").innerHTML = "¡Has perdido!";
+                    return false;
+                }
+            } else {
+                document.getElementById("exito").innerHTML = "¡Lo lograste!";
+            }
+            return false; 
+        }
+
+        function borrar() {
+            ctx.clearRect(0, 0, c.width, c.height); 
+            document.getElementById("exito").innerHTML = "";
+            document.getElementById("Pista").innerHTML = "";
+            aum = 0;
+            pista = ['_', '_', '_', '_'];
+        }
+
+        function dibujar(aum) {
+            switch (aum) {
+                case 1:
+                    dibujarCabeza();
+                    break;
+                case 2:
+                    dibujarCuerpo();
+                    break;
+                case 3:
+                    dibujarBrazoIzq();
+                    break;
+                case 4:
+                    dibujarBrazoDer();
+                    break;
+                case 5:
+                    dibujarPiernaIzq();
+                    break;
+                case 6:
+                    dibujarPiernaDer();
+                    document.getElementById("exito").innerHTML = "¡Has perdido!";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function dibujarCabeza() {
+            ctx.beginPath();
+            ctx.arc(210, 150, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function dibujarBrazoIzq() {
+            ctx.moveTo(210, 190);
+            ctx.lineTo(180, 200);
+            ctx.stroke();
+        }
+
+        function dibujarBrazoDer() {
+            ctx.moveTo(210, 190);
+            ctx.lineTo(240, 200);
+            ctx.stroke();
+        }
+
+        function dibujarCuerpo() {
+            ctx.moveTo(210, 190);
+            ctx.lineTo(210, 250);
+            ctx.stroke();
+        }
+
+        function dibujarPiernaIzq() {
+            ctx.moveTo(210, 250);
+            ctx.lineTo(180, 275);
+            ctx.stroke();
+        }
+
+        function dibujarPiernaDer() {
+            ctx.moveTo(210, 250);
+            ctx.lineTo(245, 275);
+            ctx.stroke();
+        }
+
+        function dibujarBase() {
+            ctx.moveTo(24, 345);
+            ctx.lineTo(125, 345);
+            ctx.stroke();
+        }
+
+        function dibujarPalo() {
+            ctx.moveTo(70, 345);
+            ctx.lineTo(70, 65);
+            ctx.stroke();
+        }
+
+        function dibujarPalo2() {
+            ctx.moveTo(70, 65);
+            ctx.lineTo(210, 65);
+            ctx.stroke();
+        }
+
+        function dibujarPalo3() {
+            ctx.moveTo(210, 65);
+            ctx.lineTo(210, 110);
+            ctx.stroke();
+        }
+
+        function dibujar2() {
+            ctx.beginPath();
+            ctx.arc(210, 150, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.moveTo(210, 190);
+            ctx.lineTo(180, 200);
+            ctx.stroke();
+
+            ctx.moveTo(210, 190);
+            ctx.lineTo(240, 200);
+            ctx.stroke();
+
+            ctx.moveTo(210, 190);
+            ctx.lineTo(210, 250);
+            ctx.stroke();
+
+            ctx.moveTo(210, 250);
+            ctx.lineTo(180, 275);
+            ctx.stroke();
+
+            ctx.moveTo(210, 250);
+            ctx.lineTo(245, 275);
+            ctx.stroke();
+
+            ctx.moveTo(24, 345);
+            ctx.lineTo(125, 345);
+            ctx.stroke();
+
+            ctx.moveTo(70, 345);
+            ctx.lineTo(70, 65);
+            ctx.stroke();
+
+            ctx.moveTo(70, 65);
+            ctx.lineTo(210, 65);
+            ctx.stroke();
+
+            ctx.moveTo(210, 65);
+            ctx.lineTo(210, 110);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

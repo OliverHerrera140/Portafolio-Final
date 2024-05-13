@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        div {
+            padding: 10px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            justify-items: center;
+            justify-content: center;
+            border: 0;
+        }
+
+        .palabra {
+            color: #C17C74;
+            font-size:35px;
+            text-decoration: none;
+            background-color: #34312D;
+        }
+
+        .palabra2 {
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        .palabra3 {
+            color: #508AA8;
+            font-size: 35px;
+            text-decoration: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        a:checked {
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        .fondo {
+            text-align: center;
+            color: #3D2C2E;
+            background-color: #D9C5B2;
+        }
+
+        .fondo2 {
+            text-align: center;
+            color: black;
+            background-color: #7E7F83;
+            font-size: 20px;
+        }
+
+        button {
+            background-color: #465362;
+            color: #D9C5B2;
+            height: 85px;
+            width: 120px;
+            font-size: 45px;
+            margin-bottom: 8px;
+        }
+
+        button:hover {
+            background-color: #34312D;
+            color: #F9DC5C;
+            font-weight: bold;
+            height: 105px;
+            width: 140px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            background-color: #E6CCBE;
+        }
+
+        h2{
+            color: #f18f01;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="fondo">
+            <h1>Portafolio</h1>
+            <h2 style="color: #886F68">Parcial 3</h2>
+        </div>
+        
+        <div class="fondo2">
+            <p id="message">Elige el código</p>
+        </div>
+
+        <div class="container" style="background-color:#EADDA6">
+            <h2>Semana 1</h2>
+            <button onclick="ejecutarEjercicio(1)">1</button>
+            <button onclick="ejecutarEjercicio(2)">2</button>
+            <button onclick="ejecutarEjercicio(3)">3</button>
+            <button onclick="ejecutarEjercicio(4)">4</button>
+            <button onclick="ejecutarEjercicio(5)">5</button>
+            <button onclick="ejecutarEjercicio(6)">6</button>
+            <button onclick="ejecutarEjercicio(7)">7</button>
+            <button onclick="ejecutarEjercicio(8)">8</button>
+        </div>
+        <div class="container" style="background-color:#EBDFAD">
+            <h2>Semana 2</h2>
+            <button onclick="ejecutarEjercicio(10)">10</button>
+            <button onclick="ejecutarEjercicio(11)">11</button>
+            <button onclick="ejecutarEjercicio(12)">12</button>
+            <button onclick="ejecutarEjercicio(13)">13</button>
+            <button onclick="ejecutarEjercicio(14)">14</button>
+            <button onclick="ejecutarEjercicio(15)">15</button>
+            <button onclick="ejecutarEjercicio(16)">16</button>
+            <button onclick="ejecutarEjercicio(17)">17</button>
+        </div>
+        <div class="container" style="background-color:#EFE5BD">
+            <h2>Semana 3</h2>
+            <button onclick="ejecutarEjercicio(18)">18</button>
+            <button onclick="ejecutarEjercicio(19)">19</button>
+        </div>
+        <div class="container" style="background-color:#F3ECCE">
+            <h2>Semana 4</h2>
+            <button onclick="ejecutarEjercicio(20)">20</button>
+            <button onclick="ejecutarEjercicio(21)">21</button>
+            <button onclick="ejecutarEjercicio(22)">22</button>
+            <button onclick="ejecutarEjercicio(23)">23</button>
+            <button onclick="ejecutarEjercicio(24)">24</button>
+            <button onclick="ejecutarEjercicio(25)">25</button>
+        </div>
+        <p class="palabra" id="a"></p>
+        <p class="palabra2" id="demo"></p>
+        <p class="palabra3" id="vista"></p>
+        <iframe id="iframe" src="" title="Contenido del ejercicio"></iframe>
+        
+
+    </div>
+
+    <script>
+
+function actualizarContenido(name, url) {
+    document.getElementById("a").innerHTML = "Enlace";
+    document.getElementById("demo").innerHTML = "<a href='" + url + "'>" + name + "</a>";
+    document.getElementById("vista").innerHTML = "Vista Previa";
+    document.getElementById("iframe").src = url;
+}
+
+function ejecutarEjercicio(numero) {
+    switch (numero) {
+        case 1:
+            actualizarContenido("Ejercicio 1", "parrafos.html");
+            break;
+        case 2:
+            actualizarContenido("Ejercicio 2", "TablaconVar.html");
+            break;
+        case 3:
+            actualizarContenido("Ejercicio 3", "practica1JS.html");
+            break;
+        case 4:
+            actualizarContenido("Ejercicio 4", "TablaImagen.html");
+            break;
+        case 5:
+            actualizarContenido("Ejercicio 5", "reto1JS.html");
+            break;
+        case 6:
+            actualizarContenido("Ejercicio 6", "reto2JS.html");
+            break;
+        case 7:
+            actualizarContenido("Ejercicio 7", "portafolio.html");
+        break;
+        case 8:
+            actualizarContenido("Ejercicio 8", "array.html");
+        break;
+        case 9:
+            actualizarContenido("Ejercicio 9", "canva.html");
+        break;
+        case 10:
+            actualizarContenido("Ejercicio 10", "geolocalizacion.html");
+        break;
+        case 11:
+            actualizarContenido("Ejercicio 11", "geomapa.html");
+        break;
+        case 12:
+            actualizarContenido("Ejercicio 12", "ejercicio13.html");
+        break;
+        case 13:
+            actualizarContenido("Ejercicio 13", "geomapa.html");
+        break;
+        case 14:
+            actualizarContenido("Ejercicio 14", "grafica.html");
+        break;
+        case 15:
+            actualizarContenido("Ejercicio 15", "graficaSinusoidal.html");
+        break;
+        case 16:
+            actualizarContenido("Ejercicio 16", "gráficaBarras.html");
+        break;
+        case 17:
+            actualizarContenido("Ejercicio 17", "reto3.html");
+        break;
+        case 18:
+            actualizarContenido("Ejercicio 18", "Ahorcado.html");
+        break;
+        case 19:
+            actualizarContenido("Ejercicio 19", "testalumno.html");
+        break;
+        case 20:
+            actualizarContenido("Ejercicio 20", "jspdf.html");
+        break;
+        case 21:
+            actualizarContenido("Ejercicio 21", "ejerciciopdf2.html");
+        break;
+        case 22:
+            actualizarContenido("Ejercicio 22", "ejerciciopdf3.html");
+        break;
+        case 23:
+            actualizarContenido("Ejercicio 23", "ejerciciopdf4.html");
+        break;
+        case 24:
+            actualizarContenido("Ejercicio 24", "reto9000.html");
+        break;
+        case 25:
+            actualizarContenido("Ejercicio 25", "reto9001.html");
+        break;
+        default:
+            console.log("Ejercicio no encontrado.");
+    }
+}
+    </script>
+</body>
+</html>
