@@ -276,7 +276,7 @@ transition-delay: 50ms;
 
 .nav ul li a{
 font-family: 'Montserrat', sans-serif;
-font-size: 38px; /*Tamaño letra del menu*/
+font-size: 48px; /*Tamaño letra del menu*/
 text-transform: uppercase;
 line-height: 1.2;
 font-weight: 800;
