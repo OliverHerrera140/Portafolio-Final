@@ -13,9 +13,9 @@
     <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
 
     <style>
-
-        body{
+        body {
             background-color: #363636;
+            font-family: Arial, sans-serif;
         }
 
         input[type="number"] {
@@ -24,6 +24,9 @@
             font-size: 25px;
             color: #D1495B;
             box-sizing: border-box; 
+            border: 1px solid #D1495B;
+            padding: 10px;
+            border-radius: 4px;
         }
 
         input[type="submit"] {
@@ -32,6 +35,14 @@
             font-size: 18px;
             color: black;
             box-sizing: border-box; 
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #148058;
         }
 
         div {
@@ -40,11 +51,24 @@
 
         .fondo {
             background-color: #242F40;
+            padding: 20px;
+            border-radius: 8px;
         }
 
-        h2{
+        h1 {
+            text-align: center;
+            color: #CCA43B;
+            font-size: 48px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        h2 {
             font-size: 28px;
             color: #1A936F;
+            margin: 0;
+            margin-top: 12px;
+            margin-bottom: 12px;
         }
     </style>
 </head>
@@ -52,12 +76,12 @@
     <main>
         <div>
             <div class="fondo">
-                <h1 style="text-align: center; color: #CCA43B; font-size: 48px;">Decodificador</h1>  
+                <h1>Decodificador</h1>  
             </div>
         
             <form id="myform" onsubmit="return decodifier();">
                 <h2>¿Cuántos números componen tu mensaje encriptado?</h2><br>
-                <input type="number" id="mensaje" placeholder="Ingrese la cantidad de números de tu mensaje codificado" width="500px" min="10" max="24" required><br><br>
+                <input type="number" id="mensaje" placeholder="Ingrese la cantidad de números de tu mensaje codificado" min="10" max="24" required><br><br>
                 <input type="submit" class="btn btn-primary" style="margin-left: 20px;">
             </form>
             <br><br>
@@ -70,6 +94,7 @@
                     let finalMessage = [];
                     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+                    // Recolectar números del usuario y validarlos
                     for (let i = 0; i < messageNumber; i++) {
                         let userInput;
                         do {
@@ -78,10 +103,12 @@
                         message.push(parseInt(userInput));
                     }
 
+                    // Convertir números a letras
                     for (let i = 0; i < messageNumber; i++) {
                         finalMessage.push(alphabet[message[i]]);
                     }
 
+                    // Generar PDF
                     var doc = new jsPDF();
                     doc.setFontSize(22);
                     doc.text(20, 20, 'Decodificador');
