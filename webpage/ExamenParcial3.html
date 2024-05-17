@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Examen Parcial 3</title>
+
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+
+    <style>
+
+        body{
+            background-color: #363636;
+        }
+
+        input[type="number"] {
+            width: 375px; 
+            background-color: #363636;
+            font-size: 25px;
+            color: #D1495B;
+            box-sizing: border-box; 
+        }
+
+        input[type="submit"] {
+            width: 180px; 
+            background-color: #1A936F;
+            font-size: 18px;
+            color: black;
+            box-sizing: border-box; 
+        }
+
+        div {
+            padding: 10px;
+        }
+
+        .fondo {
+            background-color: #242F40;
+        }
+
+        h2{
+            font-size: 28px;
+            color: #1A936F;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <div class="fondo">
+                <h1 style="text-align: center; color: #CCA43B; font-size: 48px;">Decodificador</h1>  
+            </div>
+        
+            <form id="myform" onsubmit="return decodifier();">
+                <h2>¿Cuántos números componen tu mensaje encriptado?</h2><br>
+                <input type="number" id="mensaje" placeholder="Ingrese la cantidad de números de tu mensaje codificado" width="500px" min="10" max="24" required><br><br>
+                <input type="submit" class="btn btn-primary" style="margin-left: 20px;">
+            </form>
+            <br><br>
+            <iframe frameborder="0" style="margin-left: 16px;" width="1220" height="400" id="pdf-iframe"></iframe>
+
+            <script>
+                function decodifier() {
+                    let messageNumber = document.getElementById('mensaje').value;
+                    let message = [];
+                    let finalMessage = [];
+                    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+                    for (let i = 0; i < messageNumber; i++) {
+                        let userInput;
+                        do {
+                            userInput = prompt("Dame tu número " + (i + 1) + " (entre 0 y 24):");
+                        } while (isNaN(userInput) || userInput < 0 || userInput > 24);
+                        message.push(parseInt(userInput));
+                    }
+
+                    for (let i = 0; i < messageNumber; i++) {
+                        finalMessage.push(alphabet[message[i]]);
+                    }
+
+                    var doc = new jsPDF();
+                    doc.setFontSize(22);
+                    doc.text(20, 20, 'Decodificador');
+                    doc.setFontSize(16);
+
+                    doc.text(20, 40, 'Mensaje Codificado:');
+                    doc.text(20, 60, message.join(', ')); 
+
+                    doc.text(20, 80, 'Mensaje Decodificado:');
+                    doc.text(20, 100, finalMessage.join('')); 
+                    
+                    var string = doc.output('datauristring');
+                    $('#pdf-iframe').attr('src', string); 
+                    return false; 
+                }
+            </script>
+        </div>
+    </main>
+</body>
+</html>
