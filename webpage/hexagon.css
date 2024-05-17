@@ -293,6 +293,12 @@ transition-delay: 50ms;
 .nav ul li:nth-child(24){
 transition-delay: 50ms;
 }
+.nav ul li:nth-child(25){
+transition-delay: 50ms;
+}
+.nav ul li:nth-child(26){
+transition-delay: 50ms;
+}
 
 .nav ul li a{
 font-family: 'Montserrat', sans-serif;
